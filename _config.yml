@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f26/STARTER-team02
 owner: ucsb-cs156-f26
 repo_name: STARTER-team02
-pull_requests: [{"author":{"id":"MDQ6VXNlcjI2MzQ3ODk3","is_bot":false,"login":"Division7","name":"Daniel Jensen"},"headRefName":"dj-disableShmUsage","number":2,"title":"Disable Chrome's Shm Usage","url":"https://github.com/ucsb-cs156-f26/STARTER-team02/pull/2"},{"author":{"id":"MDQ6VXNlcjI2MzQ3ODk3","is_bot":false,"login":"Division7","name":"Daniel Jensen"},"headRefName":"dj-java25","number":1,"title":"Migration to Java 25 and Spring Boot 3.5.16","url":"https://github.com/ucsb-cs156-f26/STARTER-team02/pull/1"}]
+pull_requests: [{"author":{"id":"MDQ6VXNlcjI2MzQ3ODk3","is_bot":false,"login":"Division7","name":"Daniel Jensen"},"headRefName":"dj-disableShmUsage","number":2,"title":"Disable Chrome's Shm Usage","url":"https://github.com/ucsb-cs156-f26/STARTER-team02/pull/2"}]

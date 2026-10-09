@@ -9,6 +9,7 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 import edu.ucsb.cs156.example.services.wiremock.WiremockServiceImpl;
+import java.util.Collections;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -53,7 +54,10 @@ public abstract class WebTestCase {
     browser =
         Playwright.create()
             .chromium()
-            .launch(new BrowserType.LaunchOptions().setHeadless(runHeadless));
+            .launch(
+                new BrowserType.LaunchOptions()
+                    .setHeadless(runHeadless)
+                    .setArgs(Collections.singletonList("--disable-dev-shm-usage")));
 
     BrowserContext context = browser.newContext();
     page = context.newPage();

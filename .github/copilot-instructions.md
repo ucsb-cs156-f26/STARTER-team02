@@ -47,7 +47,7 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 # Verify versions
 java -version  # Should show Java 21
 mvn -version   # Should show Java 21
-node -v        # Should show Node.js 20+ (project requires 22.18.0+)
+node -v        # Should show Node.js 24.21.0 (see frontend/package.json engines)
 npm -v
 ```
 
@@ -145,7 +145,7 @@ PRODUCTION=true mvn -DskipTests clean dependency:list install
 
 ### Frontend (React + Node.js)
 - **Framework**: React 19
-- **Node Version**: 22.18.0+ required
+- **Node Version**: 24.21.0 required (`^24.21.0` in `frontend/package.json`)
 - **UI Library**: React Bootstrap 5
 - **State Management**: TanStack Query (React Query)
 - **Testing**: Vite, React Testing Library
@@ -162,7 +162,7 @@ PRODUCTION=true mvn -DskipTests clean dependency:list install
 
 ### Build Issues
 - **Java Version**: Must use Java 21. Java 17 will cause build failures.
-- **Node Version Warning**: Frontend shows engine warnings for Node < 22.18.0 but works with Node 20+
+- **Node Version Warning**: Frontend shows engine warnings for Node outside `^24.21.0`; use `nvm use 24.21.0`
 - **Integration Test Failures**: Playwright driver creation errors are expected in CI environments
 - **Long Build Times**: Initial Maven builds download many dependencies (3+ minutes is normal)
 

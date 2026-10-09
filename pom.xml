@@ -587,7 +587,7 @@
                   <goal>install-node-and-npm</goal>
                 </goals>
                 <configuration>
-                  <nodeVersion>v22.18.0</nodeVersion>
+                  <nodeVersion>v24.21.0</nodeVersion>
                 </configuration>
               </execution>
               <execution>
@@ -651,7 +651,7 @@
                   <goal>install-node-and-npm</goal>
                 </goals>
                 <configuration>
-                  <nodeVersion>v22.18.0</nodeVersion>
+                  <nodeVersion>v24.21.0</nodeVersion>
                 </configuration>
               </execution>
               <execution>

@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f26/STARTER-team02
 owner: ucsb-cs156-f26
 repo_name: STARTER-team02
-pull_requests: [{"author":{"id":"MDQ6VXNlcjExMTkwMTc=","is_bot":false,"login":"pconrad","name":"Phill Conrad"},"headRefName":"pc-playwright-runs-on","number":7,"title":"Use PLAYWRIGHT_RUNS_ON variable for Playwright integration workflow runner","url":"https://github.com/ucsb-cs156-f26/STARTER-team02/pull/7"},{"author":{"is_bot":true,"login":"app/copilot-swe-agent"},"headRefName":"copilot/update-all-workflows-using-playwright","number":6,"title":"Pin Playwright integration test runner to ubuntu-24.04 with PLAYWRIGHT_UBUNTU_VERSION override","url":"https://github.com/ucsb-cs156-f26/STARTER-team02/pull/6"}]
+pull_requests: [{"author":{"is_bot":true,"login":"app/copilot-swe-agent"},"headRefName":"copilot/update-all-workflows-using-playwright","number":6,"title":"Pin Playwright integration test runner to ubuntu-24.04 with PLAYWRIGHT_UBUNTU_VERSION override","url":"https://github.com/ucsb-cs156-f26/STARTER-team02/pull/6"}]

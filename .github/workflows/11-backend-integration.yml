@@ -11,6 +11,9 @@ on:
     branches: [ main ]
     paths: [src/**, pom.xml, lombok.config]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     # Playwright misbehaves on Ubuntu versions that are not yet in its version mapping

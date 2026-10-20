@@ -113,6 +113,10 @@ public class SecurityConfig {
 
               String email = (String) userAttributes.get("email");
 
+              if (getAdmin(email)) {
+                mappedAuthorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+              }
+
               if (userAttributes.get("roles") instanceof List) {
                 List<String> roles = (List<String>) userAttributes.get("roles");
                 if (roles.contains("admin")) {

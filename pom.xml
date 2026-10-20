@@ -50,6 +50,7 @@
     <mainClass>edu.ucsb.cs156.example.ExampleApplication</mainClass>
     <app.package>edu.ucsb.cs156.example</app.package>
     <app.packagePath>edu/ucsb/cs156/example</app.packagePath>
+    <cache.use>false</cache.use>
     <targetClasses>${targetClasses:edu.ucsb.cs156.*}</targetClasses>
   </properties>
 
@@ -646,25 +647,27 @@
             </configuration>
             <executions>
               <execution>
-                <id>install node and npm</id>
+                <id>install-node-and-npm</id>
                 <goals>
                   <goal>install-node-and-npm</goal>
                 </goals>
                 <configuration>
                   <nodeVersion>v24.21.0</nodeVersion>
+                  <skip>${cache.use}</skip>
                 </configuration>
               </execution>
               <execution>
-                <id>npm install</id>
+                <id>npm-install</id>
                 <goals>
                   <goal>npm</goal>
                 </goals>
                 <configuration>
+                  <skip>${cache.use}</skip>
                   <arguments>ci</arguments>
                 </configuration>
               </execution>
               <execution>
-                <id>npm run build</id>
+                <id>npm-run-build</id>
                 <goals>
                   <goal>npm</goal>
                 </goals>

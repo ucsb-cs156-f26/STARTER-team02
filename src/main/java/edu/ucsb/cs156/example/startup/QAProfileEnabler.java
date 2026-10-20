@@ -26,7 +26,7 @@ public class QAProfileEnabler implements EnvironmentPostProcessor {
         if (resource.exists()) {
           ResourcePropertySource propertySource =
               new ResourcePropertySource("application-qa", resource);
-          environment.getPropertySources().addLast(propertySource);
+          environment.getPropertySources().addFirst(propertySource);
         }
       } catch (IOException e) {
         // Handle exception appropriately

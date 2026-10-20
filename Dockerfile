@@ -26,6 +26,6 @@ RUN apk add bash curl
 
 COPY --from=builder /home/app/startup.sh .
 
-COPY --from=builder /home/app/target/frontiers-1.0.0.jar .
+COPY --from=builder /home/app/target/team01-1.0.0.jar .
 
 ENTRYPOINT ["./startup.sh", "team01-1.0.0.jar"]

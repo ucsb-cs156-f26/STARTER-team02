@@ -263,7 +263,7 @@
             <exclude>**/${app.packagePath}/services/GrantedAuthoritiesService.*</exclude>
             <exclude>**/${app.packagePath}/ExampleApplication.*</exclude>
             <exclude>**/edu/ucsb/cs156/example/services/wiremock/*</exclude>
-            <exclude>**/${app.packagePath}/startup/QAProfileEnabler.java</exclude>
+            <exclude>**/${app.packagePath}/startup/QAProfileEnabler.*</exclude>
           </excludes>
         </configuration>
         <executions>

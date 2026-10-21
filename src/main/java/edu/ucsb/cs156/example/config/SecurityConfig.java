@@ -51,7 +51,6 @@ public class SecurityConfig {
   @Value("${app.admin.emails}")
   private final List<String> adminEmails = new ArrayList<>();
 
-  @Value("${ADMIN_GROUP:${env.ADMIN_GROUP}:cs156-staff}")
   private final String adminGroup = "";
 
   @Autowired UserRepository userRepository;
@@ -117,8 +116,7 @@ public class SecurityConfig {
                 mappedAuthorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
               }
 
-              if (userAttributes.get("roles") instanceof List) {
-                List<String> roles = (List<String>) userAttributes.get("roles");
+              if (userAttributes.get("roles") instanceof List<?> roles) {
                 if (roles.contains("admin")) {
                   mappedAuthorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
                 }
@@ -137,8 +135,11 @@ public class SecurityConfig {
   @Profile("QA")
   @Primary
   @Bean
-  GrantedAuthoritiesMapper groupMappedUserAuthoritiesMapper(GrantedAuthoritiesMapper delegate) {
+  GrantedAuthoritiesMapper groupMappedUserAuthoritiesMapper(
+      GrantedAuthoritiesMapper delegate, @Value("${app.admin.group:-}") String adminGroup) {
+
     return (authorities) -> {
+      System.out.println("adminGroup = " + adminGroup);
       Collection<? extends GrantedAuthority> delegatedAuthorities =
           delegate.mapAuthorities(authorities);
       Set<GrantedAuthority> mappedAuthorities = new HashSet<>(delegatedAuthorities);
@@ -146,8 +147,7 @@ public class SecurityConfig {
           (authority) -> {
             if (authority instanceof OAuth2UserAuthority oauth2Authority) {
               Map<String, Object> userAttributes = oauth2Authority.getAttributes();
-              if (userAttributes.get("groups") instanceof List) {
-                List<Object> groups = (List<Object>) userAttributes.get("groups");
+              if (userAttributes.get("groups") instanceof List<?> groups) {
                 if (groups.contains(adminGroup)) {
                   mappedAuthorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
                 }
